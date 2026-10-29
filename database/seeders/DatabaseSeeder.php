@@ -108,7 +108,6 @@ class DatabaseSeeder extends Seeder
                 ['label' => 'Resident Tracking', 'url' => '/facility-care'],
                 ['label' => 'Emergency Response Kit', 'url' => '/emergency-care'],
                 ['label' => 'Wellness Kit', 'url' => '/wellness-kit'],
-                ['label' => 'Blog', 'url' => '/blog'],
                 ['label' => 'Contact Us', 'url' => '/contact-us'],
             ],
         ]);

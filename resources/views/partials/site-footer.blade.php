@@ -7,7 +7,10 @@
         ]);
     }
 
-    $footerItems = collect($footerMenu ?? [])->filter(fn ($item) => filled($item['label'] ?? null) && filled($item['url'] ?? null))->values();
+    $footerItems = collect($footerMenu ?? [])
+        ->filter(fn ($item) => filled($item['label'] ?? null) && filled($item['url'] ?? null))
+        ->reject(fn ($item) => strcasecmp((string) ($item['label'] ?? ''), 'Blog') === 0 || str_contains((string) ($item['url'] ?? ''), '/blog'))
+        ->values();
     $footerCta = trim((string) setting('footer_cta', ''));
     $email = setting('email');
     $phoneAe = setting('phone_ae');
