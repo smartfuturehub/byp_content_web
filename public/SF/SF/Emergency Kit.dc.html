@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Emergency Telemedicine Kit for Remote Sites | SmartFuture</title>
+<meta name="description" content="SmartFuture’s Emergency Kit connects remote sites to medical teams through live video, connected medical devices and a platform for remote clinical support.">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#fff;color:#101828;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}*{box-sizing:border-box}a{color:#0B59AC}a:hover{color:#034D7E}</style>
+</helmet>
+<div data-screen-label="Emergency Kit" style="background:#fff;min-height:100vh">
+<nav style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #E5E7EB">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="Home.dc.html" style="display:flex;align-items:center;padding:12px 0"><img src="assets/logo.png" alt="SmartFuture" style="height:38px;display:block"></a>
+    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:flex-end;padding:12px 0">
+      <div style="position:relative" onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}">
+        <button onClick="{{ toggleMenu }}" style="display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;font-family:inherit;font-size:15px;font-weight:500;color:#0B59AC;cursor:pointer;border-bottom:2px solid #f5a915;padding-bottom:3px;" style-hover="color:#0B59AC">Solutions<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:100%;left:-16px;padding-top:14px;z-index:60">
+          <div style="width:320px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);padding:8px;display:flex;flex-direction:column;gap:2px">
+          <a href="Hospital%20at%20Home.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Hospital at Home</span><span style="font-size:13px;color:#667085;line-height:1.4">Monitor patients and coordinate hospital-led care at home</span></a>
+          <a href="Emergency%20Kit.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Emergency Kit</span><span style="font-size:13px;color:#667085;line-height:1.4">Connect on-site responders with remote medical teams</span></a>
+          <a href="Chronic%20Disease%20Management.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Chronic Care</span><span style="font-size:13px;color:#667085;line-height:1.4">Track readings and support follow-up between appointments</span></a>
+          <a href="Facility-Based%20Care.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Facility-Based Care</span><span style="font-size:13px;color:#667085;line-height:1.4">One shared view across residents and shifts</span></a>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+      <a href="Newsletter.dc.html" style="font-size:15px;font-weight:500;color:#101828;text-decoration:none" style-hover="color:#0B59AC">Newsletter</a>
+      <a href="Contact%20Us.dc.html" style="display:inline-flex;align-items:center;padding:12px 22px;border-radius:70px;background:#0B59AC;color:#fff;font-weight:500;font-size:15px;text-decoration:none" style-hover="background:#034D7E;color:#fff">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding:80px 0 72px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+    <div>
+      <span style="display:inline-block;padding:6px 14px;border-radius:16px;background:#FEF3F2;color:#B42318;font-size:14px;font-weight:500;margin-bottom:24px">Emergency telemedicine kit</span>
+      <h1 style="font-size:clamp(40px,5.5vw,64px);font-weight:700;letter-spacing:-2px;line-height:1.02;margin:0 0 16px;color:#101828">Emergency Kit for Remote Medical Support</h1>
+      <p style="font-size:22px;font-weight:500;line-height:1.4;color:#0B59AC;margin:0 0 20px;text-wrap:pretty">Remote medical support for ships, offshore sites and other locations far from a hospital.</p>
+      <p style="font-size:18px;line-height:1.6;color:#475467;margin:0 0 32px;text-wrap:pretty">When medical help is far away, SmartFuture’s Emergency Kit connects people on site with a remote medical team. Live video, connected medical devices and patient information come together in one platform, helping the remote care team assess the situation and guide the person on site.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="Contact%20Us.dc.html" style="display:inline-flex;align-items:center;padding:16px 30px;border-radius:70px;background:#0B59AC;color:#fff;font-weight:500;font-size:16px;text-decoration:none" style-hover="background:#034D7E;color:#fff">Talk to Us</a>
+        <a href="#how-it-works" style="display:inline-flex;align-items:center;padding:16px 30px;border-radius:70px;background:#f5a915;color:#1A1A1A;font-weight:600;font-size:16px;text-decoration:none" style-hover="background:#E0960C;color:#1A1A1A">See How It Works</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="aspect-ratio:16/9;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#5B6B82;font-size:14px;font-weight:500;text-align:center;padding:24px">
+        <div style="width:64px;height:64px;border-radius:50%;background:#0B59AC;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z" fill="#fff"></path></svg></div>
+        <div>EK-01 · Hero video · 64s · 1920×1080</div>
+        <div style="font-weight:400;font-size:13px">Poster frame: SmartFuture Emergency Kit in use at a remote site</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 20px">What Is an Emergency Telemedicine Kit?</h2>
+    <p style="font-size:18px;line-height:1.65;color:#475467;margin:0 0 48px;max-width:860px;text-wrap:pretty">An emergency telemedicine kit combines connected medical devices, live video and a digital platform to support medical care in remote locations. A person on site can capture vital signs and other clinical information while a remote medical team reviews the information and provides guidance.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:14px"><div style="width:56px;height:56px;border-radius:10px;background:#EAF2FB;border:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#0B59AC;font-size:11px;font-weight:600">Icon</div><h3 style="font-size:20px;font-weight:700;margin:0">For the person on site</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#475467">A simple tablet interface helps the person on site connect with the remote medical team and use the available medical devices.</p></div>
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:14px"><div style="width:56px;height:56px;border-radius:10px;background:#EAF2FB;border:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#0B59AC;font-size:11px;font-weight:600">Icon</div><h3 style="font-size:20px;font-weight:700;margin:0">For the remote medical team</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#475467">Live video and medical device readings give the remote medical team more information to assess the situation and guide next steps.</p></div>
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:14px"><div style="width:56px;height:56px;border-radius:10px;background:#EAF2FB;border:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#0B59AC;font-size:11px;font-weight:600">Icon</div><h3 style="font-size:20px;font-weight:700;margin:0">For ongoing coordination</h3><p style="margin:0;font-size:16px;line-height:1.55;color:#475467">Case information, readings, notes and other relevant records can be kept together to support follow-up and continuity of care.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 12px">How It Works</h2>
+    <p style="font-size:18px;line-height:1.6;color:#475467;margin:0 0 48px;max-width:760px;text-wrap:pretty">From the first call to medical assessment and follow-up, the Emergency Kit connects the person on site with a remote medical team in four simple steps.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+       <div style="display:flex;flex-direction:column;gap:16px">
+        <img src="assets/ek-step1.png" alt="Patient on a video call with a clinician beside her connected blood pressure monitor" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block">
+     <div style="display:flex;gap:12px;align-items:center"><span style="width:36px;height:36px;border-radius:50%;background:#0B59AC;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">1</span><h3 style="font-size:19px;font-weight:700;margin:0">Open the Kit</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">The responder opens the kit and starts the tablet. The tablet and connected medical devices are configured in advance for use at the remote site.</p>
+      </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+        <img src="assets/ek-step2.png" alt="Patient on a video call with a clinician beside her connected blood pressure monitor" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block">
+          <div style="display:flex;gap:12px;align-items:center"><span style="width:36px;height:36px;border-radius:50%;background:#0B59AC;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">2</span><h3 style="font-size:19px;font-weight:700;margin:0">Connect With the Medical Team</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">Start a live video call so the remote medical team can see and communicate with the person on site.</p>
+      </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+        <img src="assets/ek-step3.png" alt="Patient on a video call with a clinician beside her connected blood pressure monitor" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block">
+    <div style="display:flex;gap:12px;align-items:center"><span style="width:36px;height:36px;border-radius:50%;background:#0B59AC;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">3</span><h3 style="font-size:19px;font-weight:700;margin:0">Share Readings in Real Time</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">Connected medical devices send supported readings to the platform, giving the remote medical team additional information to assess the situation.</p>
+      </div>
+       <div style="display:flex;flex-direction:column;gap:16px">
+        <img src="assets/ek-step4.png" alt="Patient on a video call with a clinician beside her connected blood pressure monitor" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block">
+     <div style="display:flex;gap:12px;align-items:center"><span style="width:36px;height:36px;border-radius:50%;background:#0B59AC;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">4</span><h3 style="font-size:19px;font-weight:700;margin:0">Coordinate the Next Steps</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">The remote medical team can provide guidance based on the available information, while relevant readings, notes and case information are kept together for follow-up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 12px">What's in the Emergency Kit</h2>
+
+    <p style="font-size:20px;font-weight:500;line-height:1.6;color:#0B59AC;margin:0 0 40px">Each Emergency Kit can be configured with the medical devices and communication tools required for your remote care model.</p>
+
+    <div style="margin-bottom:32px;border:0px solid #E5E7EB;border-radius:16px;overflow:hidden;background:#FFFFFF">
+      <img
+        src="assets/ek-kit.png"
+        alt="SmartFuture Emergency Kit"
+        loading="lazy"
+        style="display:block;width:100%;height:auto;max-height:560px;object-fit:contain"
+      >
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:24px">
+      <div style="border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="font-size:19px;font-weight:700;color:#101828;margin:0">Tablet</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">A configured tablet provides access to the telemedicine platform, video communication, medical device readings and case information.</p>
+      </div>
+
+      <div style="border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="font-size:19px;font-weight:700;color:#101828;margin:0">Connected Medical Devices</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Choose from a range of medical devices based on your requirements, with supported devices configured and paired with the platform.</p>
+      </div>
+
+      <div style="border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <h3 style="font-size:19px;font-weight:700;color:#101828;margin:0">AR glasses</h3>
+          <span style="padding:3px 10px;border-radius:16px;background:#F9F5FF;color:#6941C6;font-size:12px;font-weight:500">Optional</span>
+        </div>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Hands-free video allows the remote medical team to view the responder's perspective while communicating with the person on site.</p>
+      </div>
+
+      <div style="border:1px solid #E5E7EB;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="font-size:19px;font-weight:700;color:#101828;margin:0">Remote Medical Dashboard</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Give your remote medical team one place to access active and previous cases, patient information, readings and communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+    <div>
+      <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+      <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 12px">Medical Devices for Remote Care</h2>
+      <p style="font-size:20px;font-weight:500;color:#0B59AC;margin:0 0 20px">Configured Around Your Requirements</p>
+      <p style="font-size:17px;line-height:1.65;color:#475467;margin:0 0 24px;text-wrap:pretty">We work with established medical device manufacturers and are not tied to a single brand. Devices can be selected around your clinical requirements, environment and use case.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        <span style="padding:6px 12px;border-radius:16px;background:#FEF3F2;color:#B42318;font-size:13px;font-weight:500">Blood Pressure Monitor</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#F0F9FF;color:#026AA2;font-size:13px;font-weight:500">Pulse Oximeter</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#FFFAEB;color:#B54708;font-size:13px;font-weight:500">Thermometer</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#FDF2FA;color:#C11574;font-size:13px;font-weight:500">ECG</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#F9F5FF;color:#6941C6;font-size:13px;font-weight:500">Digital Stethoscope</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#ECFDF3;color:#027A48;font-size:13px;font-weight:500">Blood Glucose Meter</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#F0F9FF;color:#026AA2;font-size:13px;font-weight:500">Otoscope &amp; Examination Camera</span>
+        <span style="padding:6px 12px;border-radius:16px;background:#F2F4F7;color:#344054;font-size:13px;font-weight:500">Ultrasound</span>
+      </div>
+      <p style="font-size:17px;font-weight:600;color:#101828;margin:0">Each Emergency Kit can be configured to your requirements.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+      <div style="aspect-ratio:1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500;text-align:center;padding:10px">Device photo 600×600</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 20px">Emergency Telemedicine for Remote Locations</h2>
+    <p style="font-size:18px;line-height:1.65;color:#475467;margin:0 0 36px;max-width:820px;text-wrap:pretty">SmartFuture’s Emergency Kit is designed for locations where medical support may be far away or difficult to access. The kit can be configured for fixed sites, mobile operations and remote environments.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Ships &amp; Vessels</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Offshore &amp; Energy</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Remote Industrial Sites</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Mining</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Construction</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Remote Communities</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Expeditions &amp; Field Operations</div></div>
+      <div style="border:1px solid #E5E7EB;border-radius:12px;overflow:hidden"><div style="aspect-ratio:4/3;background:#F4F7FB;border-bottom:1px dashed #B9C7DA;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:500">EK-06 · 800×600</div><div style="padding:14px;font-weight:600;font-size:15px">Other Remote Locations</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+    <div>
+      <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+      <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 20px">Designed for Limited Connectivity</h2>
+      <p style="font-size:17px;line-height:1.65;color:#475467;margin:0;text-wrap:pretty">Remote sites do not always have reliable connectivity. The platform is designed to support remote operations, with relevant information captured on the tablet and synchronised when connectivity is available.</p>
+    </div>
+    <div style="aspect-ratio:2/1;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#5B6B82;font-size:13px;font-weight:500;text-align:center;padding:16px"><div style="display:flex;gap:12px;align-items:center;font-size:13px;color:#0B59AC;font-weight:600"><span style="padding:8px 14px;border:1px solid #0B59AC;border-radius:8px">Captured offline</span>→<span style="padding:8px 14px;border:1px solid #0B59AC;border-radius:8px">Syncs when connected</span></div><div>EK-07 · Offline sync graphic · 1200×600</div></div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 20px">One Dashboard for Every Site</h2>
+    <p style="font-size:18px;line-height:1.65;color:#475467;margin:0 0 40px;max-width:820px;text-wrap:pretty">Give your remote medical team visibility across active and previous cases from one platform. They can join calls, review available readings and case information, add notes and support handover between team members.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:16/10;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#5B6B82;font-size:13px;font-weight:500;text-align:center;padding:16px"><div>EK-08 · Live cases view · 1600×1000</div><div style="font-weight:400">Real UI, anonymised data</div></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#12B76A"></span><h3 style="font-size:20px;font-weight:700;margin:0">Active Cases</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">See the site, patient information, available readings and care team activity in one place.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:16/10;background:#F4F7FB;border:1px dashed #B9C7DA;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#5B6B82;font-size:13px;font-weight:500;text-align:center;padding:16px"><div>EK-08 · Case archive · 1600×1000</div><div style="font-weight:400">Real UI, anonymised data</div></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#98A2B3"></span><h3 style="font-size:20px;font-weight:700;margin:0">Case History</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#475467">Keep relevant case information, readings, notes and other available records together for future reference and follow-up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 40px">Why Teams Use It</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div style="padding:28px;border-radius:16px;background:#F0F9FF;display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:4px 12px;border-radius:16px;background:#fff;color:#026AA2;font-size:13px;font-weight:600">Decision</span><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500;color:#101828">Give the remote medical team access to live communication and available medical device readings, rather than relying only on a verbal description.</p></div>
+      <div style="padding:28px;border-radius:16px;background:#ECFDF3;display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:4px 12px;border-radius:16px;background:#fff;color:#027A48;font-size:13px;font-weight:600">Assessment</span><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500;color:#101828">Help the medical team assess the available information and provide guidance on appropriate next steps.</p></div>
+      <div style="padding:28px;border-radius:16px;background:#F9F5FF;display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:4px 12px;border-radius:16px;background:#fff;color:#6941C6;font-size:13px;font-weight:600">Record</span><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500;color:#101828">Keep relevant readings, notes and case information together to support follow-up, handover and review.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 12px">Emergency Telemedicine in Practice</h2>
+    <p style="font-size:18px;line-height:1.6;color:#475467;margin:0 0 40px;max-width:760px">See how Emergency Kits can connect crews in remote maritime environments with medical support on shore.</p>
+    <div style="border:1px solid #E5E7EB;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <div style="aspect-ratio:3/2;background:#F4F7FB;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#5B6B82;font-size:13px;font-weight:500;text-align:center;padding:16px;min-height:280px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B59AC" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"></rect><circle cx="9" cy="10" r="2"></circle><path d="M21 16l-5-5-9 9"></path></svg><div>EK-10 · 1200×800</div><div style="font-weight:400">The kit on a vessel or at the command centre</div></div>
+      <div style="padding:32px;display:flex;flex-direction:column;gap:16px">
+        <div style="height:44px;width:200px;border:1px dashed #B9C7DA;border-radius:8px;background:#F4F7FB;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:600">Client logo</div>
+        <h3 style="font-size:22px;font-weight:700;margin:0;line-height:1.3">Remote Medical Support at Sea</h3>
+        <div><div style="font-size:13px;font-weight:600;color:#0B59AC;margin-bottom:4px">Challenge</div><p style="margin:0;font-size:15px;line-height:1.6;color:#475467">When a crew member becomes ill or injured at sea, medical support may be hours or days away. The team on shore needs more than a verbal description to understand the situation and provide guidance.</p></div>
+        <div><div style="font-size:13px;font-weight:600;color:#0B59AC;margin-bottom:4px">Solution</div><p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Emergency Kits equipped with a tablet and connected medical devices, linked to a remote medical platform where the medical team can communicate by live video, review available readings and manage the case.</p></div>
+        <div><div style="font-size:13px;font-weight:600;color:#0B59AC;margin-bottom:4px">Outcome</div><p style="margin:0;font-size:15px;line-height:1.6;color:#475467">The remote medical team has access to live communication, medical device readings and case information to support assessment and coordinate next steps.</p></div>
+        <div><a href="https://www.oursmartfuture.com/contact-us/" style="display:inline-flex;align-items:center;padding:14px 26px;border-radius:70px;border:1px solid #0B59AC;color:#0B59AC;font-weight:500;font-size:15px;text-decoration:none" style-hover="background:#0B59AC;color:#fff">Talk to Us About Remote Medical Support</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:88px 0;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(32px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 40px">Common Questions</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px 48px">
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">What is an emergency telemedicine kit?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">It is a portable case holding a tablet and wireless medical devices. It lets someone on site be guided by a doctor who is somewhere else, with live video and live readings instead of a phone call.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Who uses the kit on site?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">Whoever is there. A ship's officer, a site safety officer, a school nurse, a first responder. Basic first-aid training is enough, because the remote doctor guides each step.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Does it work where the signal is poor?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">The kit is built for remote sites. Readings and notes are captured on the tablet and sync when the connection returns.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Who provides the doctors?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">You do, or your medical assistance provider does. SmartFuture provides the kit and the platform that connects the two ends — we are the technology, not the medical service.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">What are the AR glasses for?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">They let the doctor see exactly what the responder sees, while the responder keeps both hands on the patient. They are optional and not every programme uses them.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Is the incident recorded?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">Yes. Notes, captured readings, photos and video recordings are kept against the case, so there is a complete record afterwards.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Can we choose what goes in the kit?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">Yes. Kits are built per programme. You tell us the environment and the risks, and we configure the devices around them.</p></div>
+      <div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Can we run it under our own brand?</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#475467">Yes. SmartFuture is white-label, so the kit interface and the control room can carry your organisation's name and look.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:88px 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="background:#0B59AC;border-radius:30px;padding:clamp(40px,6vw,72px);color:#fff;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between">
+      <div style="max-width:620px">
+        <h2 style="font-size:clamp(30px,4vw,44px);font-weight:600;letter-spacing:-1px;line-height:1.15;margin:0 0 16px;text-wrap:pretty">Build an Emergency Telemedicine Solution for Your Sites</h2>
+        <p style="font-size:18px;line-height:1.6;margin:0;color:#fff">Tell us where you operate and how your remote medical support works. We’ll help you configure the devices, platform, connectivity and workflows around your requirements.</p>
+      </div>
+      <a href="Contact%20Us.dc.html" style="display:inline-flex;align-items:center;padding:18px 34px;border-radius:70px;background:#f5a915;color:#1A1A1A;font-weight:600;font-size:16px;text-decoration:none" style-hover="background:#E0960C;color:#1A1A1A">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#101828;color:#fff;padding:64px 0 32px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px">
+      <div><img src="assets/logo.png" alt="SmartFuture" style="height:36px;filter:brightness(0) invert(1)"><p style="margin:16px 0 0;font-size:14px;line-height:1.6;color:#98A2B3;max-width:300px">Healthcare technology and systems integration partner for connected, remote care.</p></div>
+      <div style="display:flex;flex-direction:column;gap:12px"><div style="font-weight:600;font-size:14px;margin-bottom:4px">Solutions</div>
+        <a href="Hospital%20at%20Home.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Hospital at Home</a>
+        <a href="Emergency%20Kit.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Emergency Kit</a>
+        <a href="Chronic%20Disease%20Management.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Chronic Care</a>
+        <a href="Facility-Based%20Care.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Facility-Based Care</a>
+        <a href="Newsletter.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Newsletter</a>
+        <a href="Contact%20Us.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Contact Us</a></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.6;color:#D0D5DD"><div style="font-weight:600;color:#fff;margin-bottom:4px">Singapore</div><div>246 Macpherson Road, #03-01 Betime Building, Singapore 348578</div><div>+65 8836 0984</div></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.6;color:#D0D5DD"><div style="font-weight:600;color:#fff;margin-bottom:4px">United States</div><div>651 N Broad St, Suite 201, Middletown, Delaware 19709</div><div>+1 (512) 717-6408</div><a href="mailto:sales@oursmartfuture.com" style="color:#f5a915;text-decoration:none" style-hover="color:#fff">sales@oursmartfuture.com</a></div>
+    </div>
+    <div style="border-top:1px solid #1F2937;margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><span style="font-size:12px;color:#98A2B3;margin-right:4px">Compliance</span><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">PDPA Compliant</div><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">AICPA SOC</div><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">GDPR</div></div>
+      <div style="font-size:13px;color:#98A2B3;display:flex;gap:16px;flex-wrap:wrap"><span>© 2026 SmartFuture. All rights reserved.</span><span>oursmartfuture.com</span></div>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return { menuOpen: this.state.menuOpen, openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }), toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),};
+  }
+}
+</script>
+</body>
+</html>

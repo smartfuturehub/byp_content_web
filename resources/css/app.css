@@ -1,0 +1,288 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-display: Poppins, ui-sans-serif, system-ui, sans-serif;
+    --color-brand: #0B59AC;
+    --color-brand-dark: #084785;
+    --color-brand-soft: #E8F1FA;
+    --color-accent: #F79F12;
+    --color-accent-dark: #D98608;
+    --color-navy: #0A1628;
+    --color-ink: #1A2633;
+    --color-muted: #5C6B7A;
+    --color-surface: #F4F7FB;
+    --color-line: #E3E8EE;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply bg-white font-sans text-ink antialiased;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    a,
+    button,
+    label,
+    select,
+    summary,
+    [role='button'],
+    input[type='button'],
+    input[type='submit'],
+    input[type='reset'],
+    input[type='checkbox'],
+    input[type='radio'] {
+        @apply cursor-pointer;
+    }
+
+    button:disabled,
+    input:disabled,
+    select:disabled,
+    [aria-disabled='true'] {
+        cursor: not-allowed;
+    }
+
+    a {
+        @apply transition-colors;
+    }
+
+    ::selection {
+        background: #0B59AC;
+        color: #fff;
+    }
+}
+
+@utility container-site {
+    @apply mx-auto w-full max-w-[1220px] px-5 sm:px-8;
+}
+
+@utility section-pad {
+    @apply py-20 sm:py-28;
+}
+
+@utility eyebrow {
+    @apply text-[12px] font-semibold uppercase tracking-[0.2em] text-brand;
+}
+
+@utility display-h1 {
+    @apply font-sans text-[2.65rem] font-bold leading-[1.08] tracking-[-0.03em] text-navy sm:text-5xl lg:text-[3.85rem];
+}
+
+@utility display-h2 {
+    @apply font-sans text-[1.9rem] font-semibold leading-[1.18] tracking-[-0.025em] text-navy sm:text-[2.35rem];
+}
+
+@utility btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(11,89,172,0.28)] transition hover:bg-brand-dark hover:shadow-[0_10px_28px_rgba(11,89,172,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+}
+
+@utility btn-accent {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-navy shadow-[0_8px_24px_rgba(247,159,18,0.35)] transition hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+}
+
+@utility btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-full border border-white/55 bg-white/15 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/25;
+}
+
+@utility btn-outline {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-full border border-line bg-white px-7 py-3.5 text-sm font-semibold text-navy transition hover:border-brand hover:text-brand;
+}
+
+@utility card-soft {
+    @apply rounded-lg border border-line bg-white transition duration-300 hover:border-brand/30;
+}
+
+@utility input-field {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15;
+}
+
+@utility masthead {
+    @apply relative overflow-hidden bg-navy text-white;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+    .logo-grid {
+        flex-wrap: nowrap;
+    }
+}
+
+.feature-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.logo-cell {
+    display: flex;
+    flex: 1 1 6.5rem;
+    width: auto;
+    min-width: 0;
+    min-height: 5.25rem;
+    height: 5.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.15rem;
+    border: 1px solid #EEF2F6;
+    border-radius: 0.75rem;
+    background: #F4F7FB;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a.logo-cell {
+    cursor: pointer;
+}
+
+a.logo-cell:hover {
+    opacity: 0.7;
+}
+
+a.logo-cell:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 4px;
+    border-radius: 0.75rem;
+}
+
+.logo-mark {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 3.15rem;
+    object-fit: contain;
+    object-position: center;
+}
+
+.footer-logo {
+    display: block;
+    height: 2.25rem;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.photo-frame {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.25rem;
+    background: #fff;
+}
+
+.photo-frame.photo-contain {
+    object-fit: contain;
+    background: #fff;
+}
+
+.sf-solution {
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    color: #101828;
+}
+
+.sf-solution h1,
+.sf-solution h2,
+.sf-solution h3,
+.sf-solution p,
+.sf-solution span,
+.sf-solution a,
+.sf-solution li {
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.sf-solution h1 {
+    font-weight: 700;
+}
+
+.sf-solution h2 {
+    font-weight: 600;
+}
+
+.sf-solution h3 {
+    font-weight: 700;
+}
+
+.prose-cms h2,
+.prose-cms h3 {
+    @apply mb-3 mt-8 font-medium text-navy;
+}
+
+.prose-cms p {
+    @apply mb-4 text-[17px] leading-8 text-muted;
+}
+
+.prose-cms a {
+    @apply text-brand underline underline-offset-4;
+}
+
+.prose-cms ul {
+    @apply mb-4 list-disc space-y-1 pl-5 text-muted;
+}
+
+/*
+ * Tables come out of the rich editor as a bare `<table>` with a `<tbody>`, and
+ * the header row is plain `<td>` rather than `<th>`, so the first row is styled
+ * as the header here.
+ *
+ * The table is its own scroll container: with a min-width on the cells, a wide
+ * table overflows and scrolls instead of squeezing every column into a few
+ * unreadable characters on a phone.
+ */
+.prose-cms table {
+    @apply mb-6 mt-4 block w-full overflow-x-auto border-collapse text-left text-[15px];
+}
+
+.prose-cms table th,
+.prose-cms table td {
+    @apply border border-line px-4 py-3 align-top leading-7 text-muted;
+    min-width: 8.5rem;
+}
+
+.prose-cms table th,
+.prose-cms table tbody tr:first-child > td {
+    @apply bg-surface font-medium text-navy;
+}
+
+/* Cell text is a paragraph; it must not carry the body-copy size or spacing. */
+.prose-cms table :is(p, ul, ol) {
+    @apply mb-0 text-[15px] leading-7;
+}
+
+.prose-cms table :is(p, ul, ol) + :is(p, ul, ol) {
+    @apply mt-2;
+}

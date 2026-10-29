@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#fff;color:#101828;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:#0B59AC}a:hover{color:#034D7E}input,textarea,select{font-family:inherit}</style>
+</helmet>
+<div data-screen-label="Contact Us" style="background:#fff;min-height:100vh">
+<nav style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #E5E7EB">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="Home.dc.html" style="display:flex;align-items:center;padding:12px 0"><img src="assets/logo.png" alt="SmartFuture" style="height:38px;display:block"></a>
+    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:flex-end;padding:12px 0">
+      <div style="position:relative" onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}">
+        <button onClick="{{ toggleMenu }}" style="display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;font-family:inherit;font-size:15px;font-weight:500;color:#101828;cursor:pointer;" style-hover="color:#0B59AC">Solutions<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:100%;left:-16px;padding-top:14px;z-index:60">
+          <div style="width:320px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);padding:8px;display:flex;flex-direction:column;gap:2px">
+          <a href="Hospital%20at%20Home.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Hospital at Home</span><span style="font-size:13px;color:#667085;line-height:1.4">Monitor patients and coordinate hospital-led care at home</span></a>
+          <a href="Emergency%20Kit.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Emergency Kit</span><span style="font-size:13px;color:#667085;line-height:1.4">Connect on-site responders with remote medical teams</span></a>
+          <a href="Chronic%20Disease%20Management.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Chronic Care</span><span style="font-size:13px;color:#667085;line-height:1.4">Track readings and support follow-up between appointments</span></a>
+          <a href="Facility-Based%20Care.dc.html" style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#101828" style-hover="background:#F4F7FB"><span style="font-size:15px;font-weight:600">Facility-Based Care</span><span style="font-size:13px;color:#667085;line-height:1.4">One shared view across residents and shifts</span></a>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+      <a href="Newsletter.dc.html" style="font-size:15px;font-weight:500;color:#101828;text-decoration:none" style-hover="color:#0B59AC">Newsletter</a>
+      <a href="Contact%20Us.dc.html" style="display:inline-flex;align-items:center;padding:12px 22px;border-radius:70px;background:#0B59AC;color:#fff;font-weight:500;font-size:15px;text-decoration:none" style-hover="background:#034D7E;color:#fff">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding:80px 0 88px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="max-width:760px;margin-bottom:56px">
+      <span style="display:inline-block;padding:6px 14px;border-radius:16px;background:#FEF3D9;color:#7A4B00;font-size:14px;font-weight:500;margin-bottom:24px">Contact us</span>
+      <h1 style="font-size:clamp(40px,5.5vw,64px);font-weight:700;letter-spacing:-2px;line-height:1.02;margin:0 0 20px;color:#101828">Let’s Talk About Your Care Programme</h1>
+      <p style="font-size:20px;line-height:1.6;color:#475467;margin:0;text-wrap:pretty">Tell us what your team needs. We’ll help you find the right digital care solution.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start">
+      <form style="display:flex;flex-direction:column;gap:20px;padding:36px;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -4px rgba(0,0,0,.1),0 10px 15px -3px rgba(0,0,0,.1)" onSubmit="{{ submit }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">Full name<input type="text" placeholder="Jane Tan" style="padding:14px 18px;border:1px solid #D0D5DD;border-radius:37px;font-size:15px;color:#101828;outline:none" style-focus="border-color:#0B59AC"></label>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">Organisation<input type="text" placeholder="Hospital, clinic or company" style="padding:14px 18px;border:1px solid #D0D5DD;border-radius:37px;font-size:15px;color:#101828;outline:none" style-focus="border-color:#0B59AC"></label>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">Work email<input type="email" placeholder="you@organisation.com" style="padding:14px 18px;border:1px solid #D0D5DD;border-radius:37px;font-size:15px;color:#101828;outline:none" style-focus="border-color:#0B59AC"></label>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">Phone<input type="tel" placeholder="+65" style="padding:14px 18px;border:1px solid #D0D5DD;border-radius:37px;font-size:15px;color:#101828;outline:none" style-focus="border-color:#0B59AC"></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">I’m interested in<select style="padding:14px 18px;border:1px solid #D0D5DD;border-radius:37px;font-size:15px;color:#101828;background:#fff;outline:none" style-focus="border-color:#0B59AC"><option>Hospital at Home</option><option>Emergency Kit</option><option>Chronic Care</option><option>Facility-Based Care</option><option>Something else</option></select></label>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:#344054">How can we help?<textarea rows="5" placeholder="Tell us about your team, your patients and what you want to achieve." style="padding:16px 18px;border:1px solid #D0D5DD;border-radius:16px;font-size:15px;color:#101828;resize:vertical;outline:none" style-focus="border-color:#0B59AC"></textarea></label>
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#475467"><input type="checkbox" style="margin-top:3px;accent-color:#0B59AC">I agree to SmartFuture processing my details to respond to this enquiry, in line with the PDPA and GDPR.</label>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <button type="submit" style="display:inline-flex;align-items:center;padding:16px 30px;border-radius:70px;background:#0B59AC;color:#fff;font-weight:500;font-size:16px;border:none;cursor:pointer" style-hover="background:#034D7E">Send Message</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}"><span style="padding:6px 14px;border-radius:16px;background:#ECFDF3;color:#027A48;font-size:14px;font-weight:500">Thanks — we’ll be in touch shortly.</span></sc-if>
+        </div>
+      </form>
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:18px">
+          <span style="align-self:flex-start;padding:4px 12px;border-radius:16px;background:#F0F9FF;color:#026AA2;font-size:13px;font-weight:500">Singapore · Headquarters</span>
+          <div style="font-size:16px;line-height:1.6;color:#344054">246 Macpherson Road, #03-01 Betime Building,<br>Singapore 348578</div>
+          <a href="tel:+6588360984" style="font-size:18px;font-weight:600;color:#0B59AC;text-decoration:none">+65 8836 0984</a>
+        </div>
+        <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:18px">
+          <span style="align-self:flex-start;padding:4px 12px;border-radius:16px;background:#F9F5FF;color:#6941C6;font-size:13px;font-weight:500">United States</span>
+          <div style="font-size:16px;line-height:1.6;color:#344054">651 N Broad St, Suite 201, Middletown,<br>Delaware 19709</div>
+          <a href="tel:+15127176408" style="font-size:18px;font-weight:600;color:#0B59AC;text-decoration:none">+1 (512) 717-6408</a>
+        </div>
+        <div style="padding:28px;border-radius:16px;background:#0B59AC;color:#fff;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:14px;font-weight:500;opacity:.85">Email</div>
+          <a href="mailto:sales@oursmartfuture.com" style="font-size:20px;font-weight:600;color:#fff;text-decoration:none;word-break:break-all" style-hover="color:#f5a915">sales@oursmartfuture.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:72px 0 96px;border-top:1px solid #F2F4F7">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="width:40px;height:4px;background:#f5a915;border-radius:2px;margin-bottom:20px"></div>
+    <h2 style="font-size:clamp(28px,3.5vw,36px);font-weight:600;letter-spacing:-1px;line-height:1.15;color:#101828;margin:0 0 12px">Security and Compliance</h2>
+    <p style="font-size:17px;line-height:1.6;color:#475467;margin:0 0 36px;max-width:760px">Patient data is handled under recognised data-protection and security standards across the regions we serve.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <div style="width:120px;height:120px;border:1px dashed #B9C7DA;border-radius:50%;background:#F4F7FB;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:600;text-align:center;padding:12px">PDPA logo</div>
+        <h3 style="font-size:20px;font-weight:700;margin:0">PDPA Compliant</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Personal Data Protection Act, Singapore.</p>
+      </div>
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <div style="width:120px;height:120px;border:1px dashed #B9C7DA;border-radius:50%;background:#F4F7FB;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:600;text-align:center;padding:12px">AICPA SOC logo</div>
+        <h3 style="font-size:20px;font-weight:700;margin:0">AICPA SOC</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">Service Organization Controls audit for security and availability.</p>
+      </div>
+      <div style="padding:28px;border:1px solid #E5E7EB;border-radius:16px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <div style="width:120px;height:120px;border:1px dashed #B9C7DA;border-radius:50%;background:#F4F7FB;display:flex;align-items:center;justify-content:center;color:#5B6B82;font-size:12px;font-weight:600;text-align:center;padding:12px">GDPR logo</div>
+        <h3 style="font-size:20px;font-weight:700;margin:0">GDPR</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#475467">General Data Protection Regulation, European Union.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#101828;color:#fff;padding:64px 0 32px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px">
+      <div><img src="assets/logo.png" alt="SmartFuture" style="height:36px;filter:brightness(0) invert(1)"><p style="margin:16px 0 0;font-size:14px;line-height:1.6;color:#98A2B3;max-width:300px">Healthcare technology and systems integration partner for connected, remote care.</p></div>
+      <div style="display:flex;flex-direction:column;gap:12px"><div style="font-weight:600;font-size:14px;margin-bottom:4px">Solutions</div>
+        <a href="Hospital%20at%20Home.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Hospital at Home</a>
+        <a href="Emergency%20Kit.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Emergency Kit</a>
+        <a href="Chronic%20Disease%20Management.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Chronic Care</a>
+        <a href="Facility-Based%20Care.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Facility-Based Care</a>
+        <a href="Newsletter.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Newsletter</a>
+        <a href="Contact%20Us.dc.html" style="color:#D0D5DD;text-decoration:none;font-size:14px" style-hover="color:#fff">Contact Us</a></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.6;color:#D0D5DD"><div style="font-weight:600;color:#fff;margin-bottom:4px">Singapore</div><div>246 Macpherson Road, #03-01 Betime Building, Singapore 348578</div><div>+65 8836 0984</div></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.6;color:#D0D5DD"><div style="font-weight:600;color:#fff;margin-bottom:4px">United States</div><div>651 N Broad St, Suite 201, Middletown, Delaware 19709</div><div>+1 (512) 717-6408</div><a href="mailto:sales@oursmartfuture.com" style="color:#f5a915;text-decoration:none" style-hover="color:#fff">sales@oursmartfuture.com</a></div>
+    </div>
+    <div style="border-top:1px solid #1F2937;margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><span style="font-size:12px;color:#98A2B3;margin-right:4px">Compliance</span><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">PDPA Compliant</div><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">AICPA SOC</div><div style="height:48px;padding:0 16px;border:1px dashed #475467;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#D0D5DD;font-size:12px;font-weight:600;white-space:nowrap">GDPR</div></div>
+      <div style="font-size:13px;color:#98A2B3;display:flex;gap:16px;flex-wrap:wrap"><span>© 2026 SmartFuture. All rights reserved.</span><span>oursmartfuture.com</span></div>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false,  sent: false };
+  renderVals() {
+    return { menuOpen: this.state.menuOpen, openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }), toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      sent: this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
