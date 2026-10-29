@@ -1,0 +1,77 @@
+@php
+    $legalItems = collect($legalMenu ?? [])->filter(fn ($item) => filled($item['label'] ?? null) && filled($item['url'] ?? null))->values();
+    if ($legalItems->isEmpty()) {
+        $legalItems = collect([
+            ['label' => 'Terms and Conditions', 'url' => '/tnc'],
+            ['label' => 'Privacy Policy', 'url' => '/privacy-policy'],
+        ]);
+    }
+
+    $footerItems = collect($footerMenu ?? [])->filter(fn ($item) => filled($item['label'] ?? null) && filled($item['url'] ?? null))->values();
+    $footerCta = trim((string) setting('footer_cta', ''));
+    $email = setting('email');
+    $phoneAe = setting('phone_ae');
+    $phoneSg = setting('phone_sg');
+    $phoneUs = setting('phone_us');
+@endphp
+
+<footer id="footer" class="bg-[#0A1628] text-white">
+    <div class="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
+        <div>
+            <a href="{{ url('/') }}" class="inline-block">
+                <img
+                    src="{{ media_url(setting('logo', '/brand/wp/logo.png')) }}"
+                    alt="{{ setting('site_name', 'BYP Health') }}"
+                    class="footer-logo"
+                >
+            </a>
+            @if($footerCta !== '')
+                <p class="mt-5 max-w-sm text-sm leading-6 text-white/70">{{ $footerCta }}</p>
+            @endif
+        </div>
+
+        @if($footerItems->isNotEmpty())
+            <div>
+                <p class="text-sm font-semibold text-white">Solutions</p>
+                <ul class="mt-4 space-y-2.5">
+                    @foreach($footerItems as $item)
+                        <li>
+                            <a href="{{ cms_url($item['url']) }}" class="text-sm text-white/70 hover:text-white">{{ $item['label'] }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <div>
+            <p class="text-sm font-semibold text-white">Contact</p>
+            <ul class="mt-4 space-y-2.5 text-sm text-white/70">
+                @if(filled($email))
+                    <li><a href="mailto:{{ $email }}" class="hover:text-white">{{ $email }}</a></li>
+                @endif
+                @if(filled($phoneAe))
+                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneAe) }}" class="hover:text-white">{{ $phoneAe }}</a></li>
+                @endif
+                @if(filled($phoneSg))
+                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneSg) }}" class="hover:text-white">{{ $phoneSg }}</a></li>
+                @endif
+                @if(filled($phoneUs))
+                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneUs) }}" class="hover:text-white">{{ $phoneUs }}</a></li>
+                @endif
+            </ul>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10">
+        <div class="container-site flex flex-col gap-3 py-5 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
+            <p>© Copyright {{ date('Y') }}. All Rights Reserved</p>
+            <ul class="flex flex-wrap gap-x-5 gap-y-2">
+                @foreach($legalItems as $item)
+                    <li>
+                        <a href="{{ cms_url($item['url']) }}" class="hover:text-white">{{ $item['label'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</footer>

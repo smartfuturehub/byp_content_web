@@ -95,9 +95,20 @@ class BlockRegistry
                     CmsMedia::image('image'),
                     TextInput::make('image_alt'),
                     Select::make('fit')->options(['cover' => 'Crop to fill', 'contain' => 'Show full image'])->default('cover'),
-                    Select::make('layout')->options(['split' => 'Text beside image', 'stack' => 'Text above image'])->default('split'),
-                    Toggle::make('image_right')->label('Image on the right')->default(true)->visible(fn ($get) => ($get('layout') ?? 'split') !== 'stack'),
-                    Select::make('tone')->options(['white' => 'White', 'surface' => 'Light grey', 'soft' => 'Brand wash'])->default('white'),
+                    Select::make('layout')->options([
+                        'split' => 'Text beside image',
+                        'stack' => 'Text above image',
+                        'integrations' => 'EHR integrations band',
+                    ])->default('split'),
+                    Toggle::make('image_right')->label('Image on the right')->default(true)->visible(fn ($get) => ($get('layout') ?? 'split') === 'split'),
+                    Select::make('tone')->options(['white' => 'White', 'surface' => 'Light grey', 'soft' => 'Brand wash', 'navy' => 'Navy'])->default('white')->visible(fn ($get) => ($get('layout') ?? 'split') !== 'integrations'),
+                    Repeater::make('systems')
+                        ->label('System chips')
+                        ->schema([
+                            TextInput::make('label')->required(),
+                        ])
+                        ->defaultItems(0)
+                        ->visible(fn ($get) => ($get('layout') ?? 'split') === 'integrations'),
                     TextInput::make('button_label'),
                     TextInput::make('button_url'),
                 ]),

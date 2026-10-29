@@ -297,12 +297,21 @@ class DatabaseSeeder extends Seeder
                 ],
             ]),
             $this->block('split', [
+                'layout' => 'integrations',
                 'headline' => 'EHR / EMR Integration',
                 'body' => '<p>Integrate with your EHR and other systems for optimized workflow.</p>',
                 'image' => '/brand/wp/assets/img/billing-image.png',
                 'image_alt' => 'EHR and billing integrations for remote care programmes',
                 'fit' => 'contain',
-                'image_right' => true,
+                'systems' => [
+                    ['label' => 'Epic'],
+                    ['label' => 'Cerner'],
+                    ['label' => 'MEDITECH'],
+                    ['label' => 'athenahealth'],
+                    ['label' => 'eClinicalWorks'],
+                    ['label' => 'Allscripts'],
+                    ['label' => 'NextGen'],
+                ],
             ]),
             $this->block('trust_wall', [
                 'sources' => ['client', 'partner', 'acceleration', 'award'],

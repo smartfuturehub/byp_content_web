@@ -207,6 +207,8 @@ class PageControllerTest extends TestCase
         $this->seed();
 
         $this->get('/')
+            ->assertSee('logo-wall', false)
+            ->assertSee('logo-heading', false)
             ->assertSee('logo-grid', false)
             ->assertSee('logo-cell', false)
             ->assertSee('/brand/byp/clients/client-1.png', false)
@@ -224,7 +226,10 @@ class PageControllerTest extends TestCase
             ->assertSee('Medical Devices')
             ->assertSee('Oximeter')
             ->assertSee('Blood Pressure Monitor')
-            ->assertSee('EHR / EMR Integration');
+            ->assertSee('EHR / EMR Integration')
+            ->assertSee('ehr-band', false)
+            ->assertSee('Epic')
+            ->assertSee('athenahealth');
     }
 
     public function test_solutions_dropdown_renders_programme_thumbnails(): void
@@ -257,6 +262,10 @@ class PageControllerTest extends TestCase
         $response->assertDontSee('aria-label="Search"', false);
         $response->assertDontSee('href="'.url('/search').'"', false);
         $response->assertSee('Privacy Policy');
+        $response->assertSee('Terms and Conditions');
+        $response->assertSee('href="'.url('/tnc').'"', false);
+        $response->assertSee('href="'.url('/privacy-policy').'"', false);
+        $response->assertSee('Customized tech solutions to help providers seamlessly connect with their patients.');
         $response->assertSee('id="cookie-banner"', false);
         $response->assertDontSee('SG HQ');
         $response->assertDontSee('US office');

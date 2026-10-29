@@ -101,11 +101,7 @@
         <?php echo $__env->yieldContent('content'); ?>
     </main>
 
-    <footer id="footer" class="border-t border-[#E5E7EB] bg-white py-8">
-        <div class="container-site text-center text-sm text-[#667085]">
-            <p>© Copyright <?php echo e(date('Y')); ?>. All Rights Reserved</p>
-        </div>
-    </footer>
+    <?php echo $__env->make('partials.site-footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('partials.cookie-banner', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 

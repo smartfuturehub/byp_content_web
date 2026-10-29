@@ -34,12 +34,12 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
     <?php else: ?>
-        <form wire:submit="submit" novalidate class="relative space-y-4" autocomplete="on">
+        <form wire:submit="submit" novalidate class="relative grid grid-cols-1 gap-4 sm:grid-cols-2" autocomplete="on">
             <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
                 <label for="lead-website">Do not fill</label>
                 <input id="lead-website" type="text" name="company_website" value="" wire:model="website" tabindex="-1" autocomplete="off">
             </div>
-            <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-name'; ?>wire:key="lead-field-name">
+            <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-name'; ?>wire:key="lead-field-name" class="<?php echo e($showLastName ? '' : 'sm:col-span-2'); ?>">
                 <label for="lead-name" class="mb-1 block text-sm font-medium text-navy"><?php echo e($showLastName ? 'First Name' : 'Name'); ?></label>
                 <input
                     id="lead-name"
@@ -163,7 +163,7 @@ unset($__errorArgs, $__bag); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendB
                 </div>
             <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($showMessage): ?>
-                <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-message'; ?>wire:key="lead-field-message" x-data="{ count: <?php echo \Illuminate\Support\Js::from(strlen($message))->toHtml() ?> }">
+                <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-message'; ?>wire:key="lead-field-message" class="sm:col-span-2" x-data="{ count: <?php echo \Illuminate\Support\Js::from(strlen($message))->toHtml() ?> }">
                     <label for="lead-message" class="mb-1 block text-sm font-medium text-navy">Write Here</label>
                     <textarea
                         id="lead-message"
@@ -180,7 +180,7 @@ unset($__errorArgs, $__bag); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendB
                     <p class="mt-1 text-xs text-muted" x-text="count + '/300'"><?php echo e(strlen($message)); ?>/300</p>
                 </div>
             <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-            <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-captcha'; ?>wire:key="lead-field-captcha">
+            <div <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::$currentLoop['key'] = 'lead-field-captcha'; ?>wire:key="lead-field-captcha" class="sm:col-span-2">
                 <div class="mb-1 flex items-center justify-between gap-3">
                     <label for="lead-captcha" class="text-sm font-medium text-navy">
                         What is <?php echo e($captchaQuestion); ?>? <span class="text-red-600">*</span>
@@ -225,7 +225,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             </div>
-            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn-primary w-full gap-2 overflow-hidden disabled:cursor-wait disabled:opacity-80">
+            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn-primary sm:col-span-2 w-full gap-2 overflow-hidden disabled:cursor-wait disabled:opacity-80">
                 <?php echo $__env->make('livewire.partials.lead-form-submit-label', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             </button>
         </form>

@@ -116,17 +116,43 @@
     @apply relative overflow-hidden bg-navy text-white;
 }
 
+.logo-wall {
+    background: #F7F8FA;
+    padding: 3.5rem 0;
+}
+
+@media (min-width: 40rem) {
+    .logo-wall {
+        padding: 4.5rem 0;
+    }
+}
+
+.logo-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #344054;
+}
+
+.logo-heading::before,
+.logo-heading::after {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: #98A2B3;
+}
+
 .logo-grid {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
-    gap: 0.75rem;
-}
-
-@media (min-width: 48rem) {
-    .logo-grid {
-        flex-wrap: nowrap;
-    }
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 2.25rem;
 }
 
 .feature-grid {
@@ -150,28 +176,20 @@
 
 .logo-cell {
     display: flex;
-    flex: 1 1 6.5rem;
+    flex: 0 0 auto;
     width: auto;
     min-width: 0;
-    min-height: 5.25rem;
-    height: 5.25rem;
+    height: 3.5rem;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.15rem;
-    border: 1px solid #EEF2F6;
-    border-radius: 0.75rem;
-    background: #F4F7FB;
+    padding: 0;
+    background: transparent;
     text-align: center;
     text-decoration: none;
-    transition: opacity 0.2s ease;
 }
 
 a.logo-cell {
     cursor: pointer;
-}
-
-a.logo-cell:hover {
-    opacity: 0.7;
 }
 
 a.logo-cell:focus-visible {
@@ -184,10 +202,18 @@ a.logo-cell:focus-visible {
     display: block;
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 3.15rem;
+    max-width: 8.5rem;
+    max-height: 2.75rem;
     object-fit: contain;
     object-position: center;
+    filter: grayscale(1);
+    opacity: 0.92;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.logo-cell:hover .logo-mark {
+    filter: grayscale(0);
+    opacity: 1;
 }
 
 .footer-logo {
@@ -244,6 +270,14 @@ a.logo-cell:focus-visible {
 
 .prose-cms p {
     @apply mb-4 text-[17px] leading-8 text-muted;
+}
+
+.ehr-band .prose-cms p {
+    @apply mb-0 text-lg leading-[1.6] text-white/70;
+}
+
+.ehr-band .prose-cms a {
+    @apply text-accent;
 }
 
 .prose-cms a {

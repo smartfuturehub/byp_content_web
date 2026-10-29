@@ -27,12 +27,12 @@
         </form>
         @error('email') <p x-show="$wire.$errors.has('email')" class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
     @else
-        <form wire:submit="submit" novalidate class="relative space-y-4" autocomplete="on">
+        <form wire:submit="submit" novalidate class="relative grid grid-cols-1 gap-4 sm:grid-cols-2" autocomplete="on">
             <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
                 <label for="lead-website">Do not fill</label>
                 <input id="lead-website" type="text" name="company_website" value="" wire:model="website" tabindex="-1" autocomplete="off">
             </div>
-            <div wire:key="lead-field-name">
+            <div wire:key="lead-field-name" class="{{ $showLastName ? '' : 'sm:col-span-2' }}">
                 <label for="lead-name" class="mb-1 block text-sm font-medium text-navy">{{ $showLastName ? 'First Name' : 'Name' }}</label>
                 <input
                     id="lead-name"
@@ -128,7 +128,7 @@
                 </div>
             @endif
             @if($showMessage)
-                <div wire:key="lead-field-message" x-data="{ count: @js(strlen($message)) }">
+                <div wire:key="lead-field-message" class="sm:col-span-2" x-data="{ count: @js(strlen($message)) }">
                     <label for="lead-message" class="mb-1 block text-sm font-medium text-navy">Write Here</label>
                     <textarea
                         id="lead-message"
@@ -145,7 +145,7 @@
                     <p class="mt-1 text-xs text-muted" x-text="count + '/300'">{{ strlen($message) }}/300</p>
                 </div>
             @endif
-            <div wire:key="lead-field-captcha">
+            <div wire:key="lead-field-captcha" class="sm:col-span-2">
                 <div class="mb-1 flex items-center justify-between gap-3">
                     <label for="lead-captcha" class="text-sm font-medium text-navy">
                         What is {{ $captchaQuestion }}? <span class="text-red-600">*</span>
@@ -183,7 +183,7 @@
                 >
                 @error('captchaAnswer') <p x-show="$wire.$errors.has('captchaAnswer')" class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
-            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn-primary w-full gap-2 overflow-hidden disabled:cursor-wait disabled:opacity-80">
+            <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn-primary sm:col-span-2 w-full gap-2 overflow-hidden disabled:cursor-wait disabled:opacity-80">
                 @include('livewire.partials.lead-form-submit-label')
             </button>
         </form>

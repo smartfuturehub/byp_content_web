@@ -99,11 +99,7 @@
         @yield('content')
     </main>
 
-    <footer id="footer" class="border-t border-[#E5E7EB] bg-white py-8">
-        <div class="container-site text-center text-sm text-[#667085]">
-            <p>© Copyright {{ date('Y') }}. All Rights Reserved</p>
-        </div>
-    </footer>
+    @include('partials.site-footer')
     @include('partials.cookie-banner')
     @livewireScripts
     <style>[x-cloak]{display:none !important;}</style>
