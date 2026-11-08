@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'favicon' => '/favicon.png',
                 'about_blurb' => '',
                 'footer_cta' => 'Customized tech solutions to help providers seamlessly connect with their patients.',
-                'email' => 'sales@byphealthtek.com',
+                'email' => 'contact@byphealthtek.com',
                 'topbar_line' => '',
                 'coverage_line' => 'We deploy with hospitals, clinics, and care teams in any country. The UAE, Singapore and the United States are our offices — not the limit of where we work.',
                 'phone_sg' => '+65 8836 0984',

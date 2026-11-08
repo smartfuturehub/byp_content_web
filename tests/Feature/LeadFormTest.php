@@ -68,9 +68,9 @@ class LeadFormTest extends TestCase
             ->assertSet('submitted', true);
 
         Mail::assertSent(LeadSubmitted::class, function (LeadSubmitted $mail): bool {
-            return $mail->hasTo('sales@byphealthtek.com')
-                && $mail->hasBcc('sales@oursmartfuture.com')
+            return $mail->hasTo('contact@byphealthtek.com')
                 && $mail->hasBcc('jaydip@oursmartfuture.com')
+                && ! $mail->hasBcc('sales@oursmartfuture.com')
                 && $mail->hasReplyTo('amina@example.com');
         });
     }
@@ -304,8 +304,7 @@ class LeadFormTest extends TestCase
         $mailable = new LeadSubmitted($lead);
 
         $mailable->assertHasSubject('New contact request from Amina Diallo');
-        $mailable->assertTo('sales@byphealthtek.com');
-        $mailable->assertHasBcc('sales@oursmartfuture.com');
+        $mailable->assertTo('contact@byphealthtek.com');
         $mailable->assertHasBcc('jaydip@oursmartfuture.com');
         $mailable->assertSeeInHtml('New contact request');
         $mailable->assertSeeInHtml('Amina Diallo');

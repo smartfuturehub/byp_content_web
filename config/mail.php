@@ -126,10 +126,10 @@ return [
     */
 
     'lead_notification' => [
-        'address' => env('LEADS_NOTIFICATION_EMAIL', 'sales@byphealthtek.com'),
+        'address' => env('LEADS_NOTIFICATION_EMAIL', 'contact@byphealthtek.com'),
         'bcc' => array_values(array_filter(array_map(
             'trim',
-            explode(',', (string) env('LEADS_NOTIFICATION_BCC', 'sales@oursmartfuture.com,jaydip@oursmartfuture.com')),
+            explode(',', (string) env('LEADS_NOTIFICATION_BCC', 'jaydip@oursmartfuture.com')),
         ))),
     ],
 

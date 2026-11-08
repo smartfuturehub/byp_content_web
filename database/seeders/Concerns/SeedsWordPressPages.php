@@ -624,7 +624,7 @@ trait SeedsWordPressPages
                 'variant' => 'feature',
                 'columns' => '3',
                 'items' => [
-                    ['title' => 'Email', 'body' => 'sales@byphealthtek.com. All emails will be replied to in working days.'],
+                    ['title' => 'Email', 'body' => 'contact@byphealthtek.com. All emails will be replied to in working days.'],
                     ['title' => 'Phone', 'body' => '+971 55 735 6736. We are open from Monday to Friday, 10 am to 6 pm.'],
                     ['title' => 'WhatsApp Us', 'body' => 'Clients are strongly encouraged to drop us a WhatsApp for swifter reply.'],
                 ],

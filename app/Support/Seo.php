@@ -24,7 +24,7 @@ class Seo
             'name' => setting('site_name', 'BYP Health'),
             'url' => url('/'),
             'logo' => media_url(setting('logo', '/brand/images/logo.png')),
-            'email' => setting('email', 'sales@byphealthtek.com'),
+            'email' => setting('email', 'contact@byphealthtek.com'),
             'telephone' => setting('phone_ae') ?: setting('phone_sg', '+65 8836 0984'),
             'areaServed' => [
                 '@type' => 'Place',
@@ -33,7 +33,7 @@ class Seo
             'contactPoint' => [
                 '@type' => 'ContactPoint',
                 'contactType' => 'sales',
-                'email' => setting('email', 'sales@byphealthtek.com'),
+                'email' => setting('email', 'contact@byphealthtek.com'),
                 'areaServed' => 'Worldwide',
                 'availableLanguage' => 'English',
             ],
