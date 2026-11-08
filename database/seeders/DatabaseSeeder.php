@@ -292,7 +292,7 @@ class DatabaseSeeder extends Seeder
                     ['name' => 'Home Sleep Test', 'image' => '/brand/byp/devices/device-6.jpeg'],
                     ['name' => 'ECG Monitor', 'image' => '/brand/byp/devices/device-7.jpeg'],
                     ['name' => 'Dermathoscope', 'image' => '/brand/byp/devices/device-8.webp'],
-                    ['name' => '32 + Vitals'],
+                    ['name' => '32 + Vitals', 'image' => '/brand/byp/devices/device-9.jpeg'],
                 ],
             ]),
             $this->block('split', [
