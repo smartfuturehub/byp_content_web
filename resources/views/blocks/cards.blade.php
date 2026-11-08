@@ -37,11 +37,28 @@
         @endif
 
         @if($variant === 'feature')
-            <div class="feature-grid mt-12">
-                @foreach($items ?? [] as $item)
-                    <article class="flex h-full flex-col gap-2.5 rounded-2xl border p-7 {{ $tone === 'navy' ? 'border-white/10 bg-white/5' : 'border-[#E5E7EB] bg-white' }}">
+            @php
+                $featureItems = collect($items ?? [])->values();
+                $featureCount = $featureItems->count();
+                $featureGrid = match ($featureCount) {
+                    1 => 'grid max-w-xl grid-cols-1 gap-6',
+                    2, 4 => 'grid gap-6 sm:grid-cols-2',
+                    default => 'feature-grid',
+                };
+            @endphp
+            <div class="{{ $featureGrid }} {{ empty($headline) && empty($intro) ? '' : 'mt-10' }}">
+                @foreach($featureItems as $item)
+                    @php
+                        $itemUrl = $item['url'] ?? null;
+                        $isMail = filled($itemUrl) && str_starts_with((string) $itemUrl, 'mailto:');
+                        $mailAddress = $isMail ? substr((string) $itemUrl, 7) : null;
+                    @endphp
+                    <article class="flex h-full min-h-[180px] flex-col gap-3 rounded-2xl border p-6 sm:p-7 {{ $tone === 'navy' ? 'border-white/10 bg-white/5' : 'border-[#E5E7EB] bg-white' }}">
                         @if(!empty($item['title']))
                             <h3 class="text-xl font-bold leading-snug {{ $tone === 'navy' ? 'text-white' : 'text-[#101828]' }}">{{ $item['title'] }}</h3>
+                        @endif
+                        @if($isMail)
+                            <a href="{{ $itemUrl }}" class="text-base font-medium text-brand hover:underline">{{ $mailAddress }}</a>
                         @endif
                         @if(!empty($item['body']))
                             <p class="text-base leading-[1.55] {{ $tone === 'navy' ? 'text-white/70' : 'text-[#475467]' }}">{{ $item['body'] }}</p>

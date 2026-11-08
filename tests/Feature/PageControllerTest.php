@@ -166,7 +166,10 @@ class PageControllerTest extends TestCase
             ->assertSee('id="contact"', false)
             ->assertSee('Contact Us')
             ->assertSee('First Name')
-            ->assertSee('Write Here');
+            ->assertSee('Write Here')
+            ->assertSee('Offices')
+            ->assertSee('mailto:contact@byphealthtek.com', false)
+            ->assertSee('United Arab Emirates');
 
         $this->get('/')
             ->assertSee('id="solutions"', false)

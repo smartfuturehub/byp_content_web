@@ -37,11 +37,28 @@
         <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($variant === 'feature'): ?>
-            <div class="feature-grid mt-12">
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $items ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
-                    <article class="flex h-full flex-col gap-2.5 rounded-2xl border p-7 <?php echo e($tone === 'navy' ? 'border-white/10 bg-white/5' : 'border-[#E5E7EB] bg-white'); ?>">
+            <?php
+                $featureItems = collect($items ?? [])->values();
+                $featureCount = $featureItems->count();
+                $featureGrid = match ($featureCount) {
+                    1 => 'grid max-w-xl grid-cols-1 gap-6',
+                    2, 4 => 'grid gap-6 sm:grid-cols-2',
+                    default => 'feature-grid',
+                };
+            ?>
+            <div class="<?php echo e($featureGrid); ?> <?php echo e(empty($headline) && empty($intro) ? '' : 'mt-10'); ?>">
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $featureItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
+                    <?php
+                        $itemUrl = $item['url'] ?? null;
+                        $isMail = filled($itemUrl) && str_starts_with((string) $itemUrl, 'mailto:');
+                        $mailAddress = $isMail ? substr((string) $itemUrl, 7) : null;
+                    ?>
+                    <article class="flex h-full min-h-[180px] flex-col gap-3 rounded-2xl border p-6 sm:p-7 <?php echo e($tone === 'navy' ? 'border-white/10 bg-white/5' : 'border-[#E5E7EB] bg-white'); ?>">
                         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(!empty($item['title'])): ?>
                             <h3 class="text-xl font-bold leading-snug <?php echo e($tone === 'navy' ? 'text-white' : 'text-[#101828]'); ?>"><?php echo e($item['title']); ?></h3>
+                        <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($isMail): ?>
+                            <a href="<?php echo e($itemUrl); ?>" class="text-base font-medium text-brand hover:underline"><?php echo e($mailAddress); ?></a>
                         <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(!empty($item['body'])): ?>
                             <p class="text-base leading-[1.55] <?php echo e($tone === 'navy' ? 'text-white/70' : 'text-[#475467]'); ?>"><?php echo e($item['body']); ?></p>

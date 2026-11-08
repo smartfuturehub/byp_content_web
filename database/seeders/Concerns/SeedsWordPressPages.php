@@ -622,19 +622,17 @@ trait SeedsWordPressPages
             ]),
             $this->block('cards', [
                 'variant' => 'feature',
-                'columns' => '3',
-                'items' => [
-                    ['title' => 'Email', 'body' => 'contact@byphealthtek.com. All emails will be replied to in working days.'],
-                ],
-            ]),
-            $this->block('cards', [
-                'variant' => 'feature',
-                'columns' => '3',
+                'columns' => '2',
                 'headline' => 'Offices',
                 'items' => [
+                    [
+                        'title' => 'Email',
+                        'body' => 'All emails will be replied to in working days.',
+                        'url' => 'mailto:contact@byphealthtek.com',
+                    ],
                     ['image' => $this->wp('assets/img/liberty.png'), 'title' => 'USA', 'body' => '651 N Broad St, Suite 201, Middletown, Delaware 19709'],
                     ['image' => $this->wp('assets/img/merlion.png'), 'title' => 'Singapore', 'body' => '246 Macpherson Road, #03-01 Betime Building, Singapore 348578'],
-                    ['image' => $this->wp('assets/img/map.png'), 'title' => 'United Arab Emirates', 'body' => 'United Arab Emirates'],
+                    ['title' => 'United Arab Emirates', 'body' => 'United Arab Emirates'],
                 ],
             ]),
         ], 'Contact Us | BYP Health', 'Have questions or interested in our solutions? Contact BYP Health.');
