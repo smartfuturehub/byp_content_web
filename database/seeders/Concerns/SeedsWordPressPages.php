@@ -130,7 +130,7 @@ trait SeedsWordPressPages
                     ['name' => 'Glucometer', 'image' => $img('pa-img-5.png')],
                     ['name' => 'ECG', 'image' => $img('pa-img-6.png')],
                     ['name' => 'Weight Scale', 'image' => $img('pa-img-7.png')],
-                    ['name' => 'Spirometer', 'image' => $img('pa-img-8.png')],
+                    ['name' => 'Spirometer', 'image' => $img('spirometer.jpg')],
                 ],
             ]),
             $this->block('rich_text', [

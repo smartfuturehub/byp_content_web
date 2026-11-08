@@ -116,6 +116,8 @@ class PageControllerTest extends TestCase
         $this->assertStringContainsString('Leading Wireless Medical Devices', $html);
         $this->assertStringContainsString('/brand/wp/new-assets/dev-img/Cardiology-Department.jpg', $html);
         $this->assertStringContainsString('/brand/wp/new-assets/images/pa-img-2.png', $html);
+        $this->assertStringContainsString('/brand/wp/new-assets/images/spirometer.jpg', $html);
+        $this->assertStringNotContainsString('/brand/wp/new-assets/images/pa-img-8.png', $html);
         $this->assertStringNotContainsString('/brand/sf/', $html);
     }
 

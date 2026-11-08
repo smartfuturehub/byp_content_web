@@ -40,6 +40,8 @@ class ExampleTest extends TestCase
         $response->assertSee('/brand/byp/slides/resident-tracking.jpeg', false);
         $response->assertSee('/brand/byp/slides/emergency.jpeg', false);
         $response->assertSee('/brand/byp/solutions/hospital-at-home.jpg', false);
+        $response->assertSee('/brand/byp/devices/device-4.jpeg', false);
+        $response->assertSee('Spirometer');
         $response->assertSee('id="cookie-banner"', false);
         $response->assertSee('G-5MWJ5HDFMZ', false);
         $response->assertSee('GTM-KCDG6B9B', false);

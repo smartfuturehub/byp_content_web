@@ -170,7 +170,7 @@ class DatabaseSeeder extends Seeder
             ['ECG Monitor', '/brand/sf/hah-devices/ecg.png'],
             ['Oximeter', '/brand/sf/hah-devices/pulse-oximeter.png'],
             ['Dermatoscope', '/brand/sf/ek-devices/dermatoscope.png'],
-            ['Spirometer', '/brand/sf/cdm-devices/spirometer.png'],
+            ['Spirometer', '/brand/wp/new-assets/images/spirometer.jpg'],
             ['Digital Stethoscope', '/brand/sf/hah-devices/stethoscope.png'],
         ];
         foreach ($devices as $i => $device) {
