@@ -17,9 +17,10 @@ class LeadSubmitted extends Mailable
 
     public function envelope(): Envelope
     {
-        $to = config('mail.lead_notification.address');
+        $to = $this->notificationAddress();
         $bcc = collect(config('mail.lead_notification.bcc', []))
             ->filter()
+            ->reject(fn (string $email): bool => strcasecmp($email, 'sales@oursmartfuture.com') === 0)
             ->map(fn (string $email): Address => new Address($email))
             ->all();
 
@@ -40,5 +41,16 @@ class LeadSubmitted extends Mailable
         return new Content(
             markdown: 'mail.lead-submitted',
         );
+    }
+
+    protected function notificationAddress(): string
+    {
+        $address = setting('email') ?: config('mail.lead_notification.address');
+
+        if ($address === 'sales@byphealthtek.com' || ! filled($address)) {
+            return 'contact@byphealthtek.com';
+        }
+
+        return $address;
     }
 }

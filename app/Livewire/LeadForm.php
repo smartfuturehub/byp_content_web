@@ -232,7 +232,11 @@ class LeadForm extends Component
             return;
         }
 
-        $notificationEmail = config('mail.lead_notification.address');
+        $notificationEmail = setting('email') ?: config('mail.lead_notification.address');
+
+        if ($notificationEmail === 'sales@byphealthtek.com') {
+            $notificationEmail = 'contact@byphealthtek.com';
+        }
 
         if (! filled($notificationEmail)) {
             return;
@@ -258,7 +262,10 @@ class LeadForm extends Component
     {
         $country = data_get($lead->meta, 'country') ?: '—';
         $fromName = $lead->name ?: $lead->email;
-        $bcc = array_values(array_filter(config('mail.lead_notification.bcc', [])));
+        $bcc = array_values(array_filter(
+            config('mail.lead_notification.bcc', []),
+            fn (string $email): bool => strcasecmp($email, 'sales@oursmartfuture.com') !== 0,
+        ));
         $body = implode("\n", [
             'A visitor submitted the Contact Us form.',
             '',
