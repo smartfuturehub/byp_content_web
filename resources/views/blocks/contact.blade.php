@@ -1,9 +1,5 @@
 @php
     $email = setting('email');
-    $phoneAe = setting('phone_ae');
-    $phoneSg = setting('phone_sg');
-    $phoneUs = setting('phone_us');
-    $whatsapp = setting('whatsapp_url');
 @endphp
 
 <section id="contact" class="contact-band relative overflow-hidden bg-[#0B59AC] py-16 sm:py-[88px]">
@@ -18,33 +14,13 @@
             @endif
             <h2 class="text-[1.9rem] font-semibold leading-[1.18] tracking-[-0.025em] text-white sm:text-[2.35rem]">{!! $headline_html !!}</h2>
 
-            <div class="mt-8 space-y-3 text-[15px] text-white/85">
-                @if(filled($email))
+            @if(filled($email))
+                <div class="mt-8 space-y-3 text-[15px] text-white/85">
                     <p>
                         <a href="mailto:{{ $email }}" class="hover:text-white">{{ $email }}</a>
                     </p>
-                @endif
-                @if(filled($phoneAe))
-                    <p>
-                        <a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneAe) }}" class="hover:text-white">{{ $phoneAe }}</a>
-                    </p>
-                @endif
-                @if(filled($phoneSg))
-                    <p>
-                        <a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneSg) }}" class="hover:text-white">{{ $phoneSg }}</a>
-                    </p>
-                @endif
-                @if(filled($phoneUs))
-                    <p>
-                        <a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneUs) }}" class="hover:text-white">{{ $phoneUs }}</a>
-                    </p>
-                @endif
-                @if(filled($whatsapp))
-                    <p>
-                        <a href="{{ $whatsapp }}" class="font-medium text-[#F79F12] hover:text-white" target="_blank" rel="noopener">WhatsApp us</a>
-                    </p>
-                @endif
-            </div>
+                </div>
+            @endif
         </div>
 
         @if(!empty($show_form))

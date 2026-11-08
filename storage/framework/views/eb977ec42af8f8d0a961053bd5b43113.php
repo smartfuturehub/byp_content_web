@@ -1,9 +1,5 @@
 <?php
     $email = setting('email');
-    $phoneAe = setting('phone_ae');
-    $phoneSg = setting('phone_sg');
-    $phoneUs = setting('phone_us');
-    $whatsapp = setting('whatsapp_url');
 ?>
 
 <section id="contact" class="contact-band relative overflow-hidden bg-[#0B59AC] py-16 sm:py-[88px]">
@@ -18,33 +14,13 @@
             <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             <h2 class="text-[1.9rem] font-semibold leading-[1.18] tracking-[-0.025em] text-white sm:text-[2.35rem]"><?php echo $headline_html; ?></h2>
 
-            <div class="mt-8 space-y-3 text-[15px] text-white/85">
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($email)): ?>
+            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($email)): ?>
+                <div class="mt-8 space-y-3 text-[15px] text-white/85">
                     <p>
                         <a href="mailto:<?php echo e($email); ?>" class="hover:text-white"><?php echo e($email); ?></a>
                     </p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneAe)): ?>
-                    <p>
-                        <a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneAe)); ?>" class="hover:text-white"><?php echo e($phoneAe); ?></a>
-                    </p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneSg)): ?>
-                    <p>
-                        <a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneSg)); ?>" class="hover:text-white"><?php echo e($phoneSg); ?></a>
-                    </p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneUs)): ?>
-                    <p>
-                        <a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneUs)); ?>" class="hover:text-white"><?php echo e($phoneUs); ?></a>
-                    </p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($whatsapp)): ?>
-                    <p>
-                        <a href="<?php echo e($whatsapp); ?>" class="font-medium text-[#F79F12] hover:text-white" target="_blank" rel="noopener">WhatsApp us</a>
-                    </p>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
         </div>
 
         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(!empty($show_form)): ?>

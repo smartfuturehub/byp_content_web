@@ -13,9 +13,6 @@
         ->values();
     $footerCta = trim((string) setting('footer_cta', ''));
     $email = setting('email');
-    $phoneAe = setting('phone_ae');
-    $phoneSg = setting('phone_sg');
-    $phoneUs = setting('phone_us');
 ?>
 
 <footer id="footer" class="bg-[#0A1628] text-white">
@@ -51,15 +48,6 @@
             <ul class="mt-4 space-y-2.5 text-sm text-white/70">
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($email)): ?>
                     <li><a href="mailto:<?php echo e($email); ?>" class="hover:text-white"><?php echo e($email); ?></a></li>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneAe)): ?>
-                    <li><a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneAe)); ?>" class="hover:text-white"><?php echo e($phoneAe); ?></a></li>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneSg)): ?>
-                    <li><a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneSg)); ?>" class="hover:text-white"><?php echo e($phoneSg); ?></a></li>
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(filled($phoneUs)): ?>
-                    <li><a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', (string) $phoneUs)); ?>" class="hover:text-white"><?php echo e($phoneUs); ?></a></li>
                 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
             </ul>
         </div>

@@ -25,7 +25,6 @@ class Seo
             'url' => url('/'),
             'logo' => media_url(setting('logo', '/brand/images/logo.png')),
             'email' => setting('email', 'contact@byphealthtek.com'),
-            'telephone' => setting('phone_ae') ?: setting('phone_sg', '+65 8836 0984'),
             'areaServed' => [
                 '@type' => 'Place',
                 'name' => 'Worldwide',

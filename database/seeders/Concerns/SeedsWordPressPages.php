@@ -625,8 +625,6 @@ trait SeedsWordPressPages
                 'columns' => '3',
                 'items' => [
                     ['title' => 'Email', 'body' => 'contact@byphealthtek.com. All emails will be replied to in working days.'],
-                    ['title' => 'Phone', 'body' => '+971 55 735 6736. We are open from Monday to Friday, 10 am to 6 pm.'],
-                    ['title' => 'WhatsApp Us', 'body' => 'Clients are strongly encouraged to drop us a WhatsApp for swifter reply.'],
                 ],
             ]),
             $this->block('cards', [
@@ -634,9 +632,9 @@ trait SeedsWordPressPages
                 'columns' => '3',
                 'headline' => 'Offices',
                 'items' => [
-                    ['image' => $this->wp('assets/img/liberty.png'), 'title' => 'USA', 'body' => '651 N Broad St, Suite 201, Middletown, Delaware 19709. +1 (512) 717-6408'],
-                    ['image' => $this->wp('assets/img/merlion.png'), 'title' => 'Singapore', 'body' => '246 Macpherson Road, #03-01 Betime Building, Singapore 348578. +65 8836 0984'],
-                    ['image' => $this->wp('assets/img/map.png'), 'title' => 'United Arab Emirates', 'body' => '+971 55 735 6736'],
+                    ['image' => $this->wp('assets/img/liberty.png'), 'title' => 'USA', 'body' => '651 N Broad St, Suite 201, Middletown, Delaware 19709'],
+                    ['image' => $this->wp('assets/img/merlion.png'), 'title' => 'Singapore', 'body' => '246 Macpherson Road, #03-01 Betime Building, Singapore 348578'],
+                    ['image' => $this->wp('assets/img/map.png'), 'title' => 'United Arab Emirates', 'body' => 'United Arab Emirates'],
                 ],
             ]),
         ], 'Contact Us | BYP Health', 'Have questions or interested in our solutions? Contact BYP Health.');

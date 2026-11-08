@@ -13,9 +13,6 @@
         ->values();
     $footerCta = trim((string) setting('footer_cta', ''));
     $email = setting('email');
-    $phoneAe = setting('phone_ae');
-    $phoneSg = setting('phone_sg');
-    $phoneUs = setting('phone_us');
 @endphp
 
 <footer id="footer" class="bg-[#0A1628] text-white">
@@ -51,15 +48,6 @@
             <ul class="mt-4 space-y-2.5 text-sm text-white/70">
                 @if(filled($email))
                     <li><a href="mailto:{{ $email }}" class="hover:text-white">{{ $email }}</a></li>
-                @endif
-                @if(filled($phoneAe))
-                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneAe) }}" class="hover:text-white">{{ $phoneAe }}</a></li>
-                @endif
-                @if(filled($phoneSg))
-                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneSg) }}" class="hover:text-white">{{ $phoneSg }}</a></li>
-                @endif
-                @if(filled($phoneUs))
-                    <li><a href="tel:{{ preg_replace('/[^\d+]/', '', (string) $phoneUs) }}" class="hover:text-white">{{ $phoneUs }}</a></li>
                 @endif
             </ul>
         </div>
