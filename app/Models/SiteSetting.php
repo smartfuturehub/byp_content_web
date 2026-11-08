@@ -22,7 +22,13 @@ class SiteSetting extends Model
 
     public function get(string $key, mixed $default = null): mixed
     {
-        return data_get($this->data ?? [], $key, $default);
+        $value = data_get($this->data ?? [], $key, $default);
+
+        if ($key === 'email' && (blank($value) || strcasecmp((string) $value, 'sales@byphealthtek.com') === 0)) {
+            return 'contact@byphealthtek.com';
+        }
+
+        return $value;
     }
 
     public function put(string $key, mixed $value): self
